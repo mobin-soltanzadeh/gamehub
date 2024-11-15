@@ -21,7 +21,7 @@ function Navbar({ onSearch }: Props) {
       {/* search box */}
       <div className="flex justify-start items-center gap-x-2 w-full px-2 py-2 bg-gray-300 dark:bg-zinc-700 rounded-2xl">
         <FiSearch className="dark:text-white" size={"30px"} />
-        <input type="text" placeholder="Search games . . ." className="w-full placeholder:text-zinc-800 placeholder:font-semibold dark:placeholder:text-gray-100 outline-none bg-transparent" onKeyDown={pressHandler} />
+        <input type="text" placeholder="Search games . . ." className="w-full text-[10px] sssm:text-xs lg:text-base placeholder:text-zinc-800 placeholder:font-semibold dark:placeholder:text-gray-100 outline-none bg-transparent" onKeyDown={pressHandler} />
       </div>
 
       {/* theme btn */}

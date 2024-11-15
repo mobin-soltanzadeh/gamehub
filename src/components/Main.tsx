@@ -73,7 +73,7 @@ function Main({ genre, filteredGames }: Props) {
             <div className="w-4 lg:w-6"><IoIosArrowDown size={"100%"} className="mt-1" /></div>
           </button>
 
-          <ul style={{display: PlatformModal ? "flex" : "none"}} className="absolute top-full translate-y-2 left-0 flex flex-col justify-center items-start w-full p-0 text-gray-100 bg-black/90 border-y-8 border-black/90 rounded-md">
+          <ul style={{display: PlatformModal ? "flex" : "none"}} className="absolute top-full translate-y-2 left-0 flex flex-col justify-center items-start w-full p-0 text-gray-100 bg-black/90 border-y-8 border-black/90 rounded-md z-50">
             <li className="flex justify-start items-center gap-x-2 py-1 text-start w-full px-2 hover:bg-zinc-700" onClick={() => setPlatform("All")}>All platforms</li>
             <li className="flex justify-start items-center gap-x-2 py-1 text-start w-full px-2 hover:bg-zinc-700" onClick={() => setPlatform("PC")}>PC</li>
             <li className="flex justify-start items-center gap-x-2 py-1 text-start w-full px-2 hover:bg-zinc-700" onClick={() => setPlatform("PlayStation")}>PlayStation</li>
@@ -90,7 +90,7 @@ function Main({ genre, filteredGames }: Props) {
             <div className="w-4 lg:w-6"><IoIosArrowDown size={"100%"} className="mt-1" /></div>
           </button>
 
-          <ul style={{display: OrderModal ? "flex" : "none"}} className="absolute top-full translate-y-2 left-0 flex flex-col justify-center items-start w-full p-0 text-gray-100 bg-black/90 border-y-8 border-black/90 rounded-md">
+          <ul style={{display: OrderModal ? "flex" : "none"}} className="absolute top-full translate-y-2 left-0 flex flex-col justify-center items-start w-full p-0 text-gray-100 bg-black/90 border-y-8 border-black/90 rounded-md z-50">
             
             <li className="flex justify-start items-center gap-x-2 py-1 text-start w-full px-2 hover:bg-zinc-700" onClick={() => setFilter("Name!")}>
               <span>Name</span> 
