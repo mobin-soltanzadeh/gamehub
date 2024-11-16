@@ -18,8 +18,7 @@ export default function BottomPagination({ arrLength, currentPage, onChangePage 
     pageNumbers = [1, 2, 3, 4, 5, "...", endPageNum-4, endPageNum-3, endPageNum-2, endPageNum-1,endPageNum];
   else if(currentPage > 3)
     pageNumbers = [1, -1, currentPage-2, currentPage-1, currentPage, currentPage+1, currentPage+2, -2, endPageNum];
-
-    
+  
 
   return <div className="BottomPagination flex justify-center items-center gap-x-3 w-full px-4">
     {
