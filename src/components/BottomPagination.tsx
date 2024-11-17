@@ -28,15 +28,7 @@ export default function BottomPagination({ arrLength, currentPage, onChangePage 
       </button>
     }
     {
-      endPageNum === 10 && 
-      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(pageNum => (
-      <button key={pageNum} className={`relative size-6 lg:size-7 xl:size-9 rotate-45 ${currentPage === pageNum && "bg-zinc-700 text-orange-500"} hover:bg-zinc-700 hover:text-orange-500 rounded-md`} onClick={() => onChangePage(pageNum)} >
-        <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45 text-sm lg:text-lg`}>{pageNum}</span>
-      </button>
-      ))
-    }
-    {
-      endPageNum < 10 && 
+      endPageNum <= 10 && 
       Array.from({length: endPageNum}, (_, index) => index + 1).map(pageNum => (
       <button key={pageNum} className={`relative size-6 lg:size-7 xl:size-9 rotate-45 ${currentPage === pageNum && "bg-zinc-700 text-orange-500"} hover:bg-zinc-700 hover:text-orange-500 rounded-md`} onClick={() => onChangePage(pageNum)} >
         <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45 text-sm lg:text-lg`}>{pageNum}</span>

@@ -18,6 +18,7 @@ function Main({ genre, filteredGames }: Props) {
   const [OrderModal, setOrderModal] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
+  document.title = genre
 
   useEffect(() => {
     setSortedGames(filteredGames)
@@ -40,8 +41,8 @@ function Main({ genre, filteredGames }: Props) {
     newGames = [...sortedGames]
     if (filter === "Name!") newGames.sort((a, b) => a.title.toUpperCase() < b.title.toUpperCase() ? -1 : 1);
     else if (filter === "Name ") newGames.sort((a, b) => a.title.toUpperCase() > b.title.toUpperCase() ? -1 : 1);
-    else if (filter === "Release data!") newGames.sort((a, b) => a.release_date.toUpperCase() < b.release_date.toUpperCase() ? -1 : 1);
-    else if (filter === "Release data ") newGames.sort((a, b) => a.release_date.toUpperCase() > b.release_date.toUpperCase() ? -1 : 1);
+    else if (filter === "Release date!") newGames.sort((a, b) => a.release_date.toUpperCase() < b.release_date.toUpperCase() ? -1 : 1);
+    else if (filter === "Release date ") newGames.sort((a, b) => a.release_date.toUpperCase() > b.release_date.toUpperCase() ? -1 : 1);
     else if (filter === "Average rating!") newGames.sort((a, b) => a.point < b.point ? -1 : 0);
     else if (filter === "Average rating ") newGames.sort((a, b) => a.point > b.point ? -1 : 0);
 
@@ -51,8 +52,8 @@ function Main({ genre, filteredGames }: Props) {
     let newGames = [...sortedGames]
     if (filter === "Name!") newGames.sort((a, b) => a.title.toUpperCase() < b.title.toUpperCase() ? -1 : 0);
     else if (filter === "Name ") newGames.sort((a, b) => a.title.toUpperCase() > b.title.toUpperCase() ? -1 : 0);
-    else if (filter === "Release data!") newGames.sort((a, b) => a.release_date.toUpperCase() < b.release_date.toUpperCase() ? -1 : 0);
-    else if (filter === "Release data ") newGames.sort((a, b) => a.release_date.toUpperCase() > b.release_date.toUpperCase() ? -1 : 0);
+    else if (filter === "Release date!") newGames.sort((a, b) => a.release_date.toUpperCase() < b.release_date.toUpperCase() ? -1 : 0);
+    else if (filter === "Release date ") newGames.sort((a, b) => a.release_date.toUpperCase() > b.release_date.toUpperCase() ? -1 : 0);
     else if (filter === "Average rating!") newGames.sort((a, b) => a.point < b.point ? -1 : 0);
     else if (filter === "Average rating ") newGames.sort((a, b) => a.point > b.point ? -1 : 0);
     
@@ -101,12 +102,12 @@ function Main({ genre, filteredGames }: Props) {
               <FaArrowUpWideShort />
             </li>
 
-            <li className="flex justify-start items-center gap-x-2 py-1 text-start w-full px-2 hover:bg-zinc-700" onClick={() => setFilter("Release data!")}>
-              <span>Release data</span>
+            <li className="flex justify-start items-center gap-x-2 py-1 text-start w-full px-2 hover:bg-zinc-700" onClick={() => setFilter("Release date!")}>
+              <span>Release date</span>
               <FaArrowDownShortWide />
             </li>
-            <li className="flex justify-start items-center gap-x-2 py-1 text-start w-full px-2 hover:bg-zinc-700" onClick={() => setFilter("Release data ")}>
-              <span>Release data</span>
+            <li className="flex justify-start items-center gap-x-2 py-1 text-start w-full px-2 hover:bg-zinc-700" onClick={() => setFilter("Release date ")}>
+              <span>Release date</span>
               <FaArrowUpWideShort />
             </li>
 
