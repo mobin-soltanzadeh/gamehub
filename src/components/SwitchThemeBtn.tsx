@@ -28,9 +28,9 @@ export default function Theme() {
   }
 
   return (
-    <button className={`Theme relative w-14 h-14 lg:w-11 lg:h-11 dark:text-gray-100 hover:text-orange-500 dark:hover:text-orange-500 z-50`} onClick={changetheme}>
-      <HiOutlineMoon className="moon absolute left-0 top-0 size-full scale-100 dark:scale-0 dark:rotate-[360deg] transition-all duration-500" />
-      <HiOutlineSun className="sun absolute left-0 top-0 size-full scale-0 dark:scale-100 dark:rotate-[360deg] transition-all duration-500" />
+    <button className={`Theme relative w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 dark:text-gray-100 hover:text-orange-500 dark:hover:text-orange-500 z-50`} onClick={changetheme}>
+      <HiOutlineMoon className="moon absolute left-0 top-0 w-full h-full scale-100 dark:scale-0 dark:rotate-[360deg] transition-all duration-500" />
+      <HiOutlineSun className="sun absolute left-0 top-0 w-full h-full scale-0 dark:scale-100 dark:rotate-[360deg] transition-all duration-500" />
     </button>
   );
 }

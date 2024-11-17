@@ -18,7 +18,7 @@ function Main({ genre, filteredGames }: Props) {
   const [OrderModal, setOrderModal] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  document.title = genre
+  document.title = genre + "Games";
 
   useEffect(() => {
     setSortedGames(filteredGames)
