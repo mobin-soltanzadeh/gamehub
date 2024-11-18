@@ -19,7 +19,9 @@ export default function BottomPagination({ arrLength, currentPage, onChangePage 
   else if(currentPage > 3)
     pageNumbers = [1, -1, currentPage-2, currentPage-1, currentPage, currentPage+1, currentPage+2, -2, endPageNum];
   
-
+  if(endPageNum === 0)  return (
+    <div className="w-full mx-auto text-center lg:px-10 xl:px-20 m-20">No gamed found</div>
+  );
   return <div className="BottomPagination flex justify-center items-center gap-x-3 w-full px-4">
     {
       startPageNum !== endPageNum &&
