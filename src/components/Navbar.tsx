@@ -68,18 +68,19 @@ function Navbar({ onSearch, onChangeGenre }: Props) {
             </li>
           ))}
 
-          <div className="flex justify-between items-center w-full mt-10">
+          <div className="flex justify-between items-center w-full mt-3">
             <p className="m-0">Theme</p>
             <SwitchThemeBtn/>
           </div>
 
-          <div className="flex justify-between items-center w-full mt-10">
-            <div className="flex flex-col">
+          <div className="flex justify-between items-center w-full mt-3">
+            <div className="flex flex-col m-0">
               <p className="m-0">Sign in</p>
               <p className="m-0">Sign up</p>
             </div>
 
-            <div className="sm:hidden max-w-8 max-h-8 sm400:max-w-9 sm400:max-h-9 hover:text-orange-500 dark:hover:text-orange-500"><IoLogInOutline size={"100%"} /></div>          
+            <Link to={"/gamehub/login"} className="sm:hidden max-w-8 max-h-8 sm400:max-w-9 sm400:max-h-9 text-zinc-800 dark:text-gray-100 hover:text-orange-500 dark:hover:text-orange-500"><IoLogInOutline size={"100%"} /></Link>
+            {/* <div className="sm:hidden max-w-8 max-h-8 sm400:max-w-9 sm400:max-h-9 hover:text-orange-500 dark:hover:text-orange-500"><IoLogInOutline size={"100%"} /></div>           */}
           </div>
           
         </ul>

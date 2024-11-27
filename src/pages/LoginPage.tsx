@@ -6,11 +6,19 @@ import Social from "../components/Social";
 import Image from "../assets/pink22.jpg";
 
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
+  const navigate = useNavigate()
   const [status, setStatus] = useState("right");
-  const [passLock, setLock] = useState<boolean>(false)
+  const [passLock, setLock] = useState<boolean>(false);
 
+
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    navigate("/gamehub/")
+    
+  };
 
   return (
       <div className="flex justify-center items-center min-w-full min-h-screen bg-gradient-to-r from-gray-400/50 to-blue-400/90">
@@ -54,7 +62,7 @@ function LoginPage() {
         {/* mobile login page */}
           <img src={Image} alt="" className="absolute lg:hidden top-0 left-0 w-screen h-screen object-cover z-10" />
           <div className="absolute lg:hidden top-0 left-0 w-screen h-screen z-20 backdrop-blur-[5px]" />
-          <form className="lg:hidden flex flex-col justify-center items-center gap-y-5 text-zinc-800 w-full sm720:w-4/5 max-w-[400px] p-10 mx-8 sm400:mx-14 bg-white/20 border border-white backdrop-blur-xl rounded-2xl z-30">
+          <form onSubmit={submitHandler} className="lg:hidden flex flex-col justify-center items-center gap-y-5 text-zinc-800 w-full sm720:w-4/5 max-w-[400px] p-10 mx-8 sm400:mx-14 bg-white/20 border border-white backdrop-blur-xl rounded-2xl z-30">
               
               <h1 className="text-3xl sssm:text-4xl">Login</h1>
               <Social iconSize={15} />
