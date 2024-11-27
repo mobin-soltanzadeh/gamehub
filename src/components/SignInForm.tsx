@@ -39,7 +39,7 @@ export default function SignInForm() {
       
       <div className="flex flex-col justify-center items-center gap-y-1 w-full px-14">
         <button>forget your password?</button>
-        <button className="w-full py-2 bg-gradient-to-tr from-fuchsia-400/80 to-rose-500/70 text-gray-100 rounded-xl">
+        <button className="w-full py-2 bg-gradient-to-tr from-fuchsia-400/80 to-rose-500/80 text-gray-100 rounded-xl hover:bg-black hover:text-gray-200 transition-colors duration-300">
           SIGN IN
         </button>
       </div>

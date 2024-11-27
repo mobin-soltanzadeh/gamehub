@@ -18,7 +18,7 @@ function Main({ genre, filteredGames }: Props) {
   const [OrderModal, setOrderModal] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  document.title = genre + "Games";
+  document.title = (platform==="All" ? "": platform) + " " + genre + " Games";
 
   useEffect(() => {
     setSortedGames(filteredGames)
@@ -63,7 +63,7 @@ function Main({ genre, filteredGames }: Props) {
   
 
   return (
-    <div className="Main flex flex-col grow justify-center items-start gap-y-3 lg:gap-y-5 xl:gap-y-8 w-full">
+    <div className="Main flex flex-col grow justify-center items-start gap-y-3 lg:gap-y-5 xl:gap-y-8 w-full px-2">
       <p className="mainHeader text-2xl lg:text-3xl xl:text-5xl font-bold">{platform} {genre} Games</p>
       
       <div className="flex flex-col lg:flex-row gap-x-3 gap-y-2">

@@ -10,6 +10,7 @@ export default {
       screens: {
         'sssm': "300px",
         'sm': '640px',
+        "sm400": "400px",
         'sm720': '720px',
         'md': '768px',
         'lg': '1024px',

@@ -10,9 +10,9 @@ import { useState } from "react";
 export default function GameCard(props: GameType) {
   const [isLoading, setLoading] = useState<boolean>(true)
   return (
-    <div className="GameCard basis-[200px] xl:basis-[250px] grow overflow-hidden dark:text-gray-100 border border-black/40 shadow-md rounded-lg max-w-[700px]">
+    <div className="GameCard basis-[200px] xl:basis-[250px] grow overflow-hidden border border-black/40 shadow-md rounded-lg max-w-[700px]">
       {/* game image */}
-      <a href={""} target="_blank">
+      <a href="" target="_blank">
         <img src={props.thumbnail} alt="game-image" className={`w-full ${isLoading ? "hidden" : ""} object-cover`} onLoad={() => setLoading(false)} />
 
         {isLoading &&
@@ -24,24 +24,24 @@ export default function GameCard(props: GameType) {
         }
       </a>
 
-      <div className="flex flex-col justify-start items-start p-3">
-        {/* game title */}
-        <p className="text-xl xl:text-2xl font-semibold w-full line-clamp-1 mb-1">{props.title}</p>
-
-        {/* game paltforms */}
-        <div className="flex justify-between items-center w-full mb-4">
-          <div className="platforms flex justify-center items-center gap-x-1">
-            {(props.id % 2 === 0) && <FaWindows />}
-            {(props.id % 2 !== 0 && props.id % 3 !== 0 && props.id % 5 !== 0 && props.id % 7 !== 0 && props.id % 11 !== 0 && props.id % 13 !== 0) && <FaWindows />}
-            {(props.id % 3 === 0) && <FaPlaystation className="mb-0.5" />}
-            {(props.id % 5 === 0) && <IoLogoXbox />}
-            {(props.id % 7 === 0) && <BsApple className="mb-0.5" />}
-            {(props.id % 11 === 0) && <DiAndroid />}
-            {(props.id % 13 === 0) && <FaLinux />}
+      <div className="flex flex-col justify-start items-start gap-y-1 p-3">
+        {/* game paltforms && score */}
+        <div className="flex justify-between items-center w-full">
+          <div className="platforms flex justify-center items-center gap-x-1 mb-1">
+            {(props.id % 2 === 0) && <div className="w-5 h-5 sm:w-6 sm:h-6"><FaWindows size={"100%"} /></div>}
+            {(props.id % 2 !== 0 && props.id % 3 !== 0 && props.id % 5 !== 0 && props.id % 7 !== 0 && props.id % 11 !== 0 && props.id % 13 !== 0) && <div className="w-5 h-5 sm:w-6 sm:h-6"><FaWindows size={"100%"} /></div>}
+            {(props.id % 3 === 0) && <div className="w-5 h-5 sm:w-6 sm:h-6 mb-0.5"><FaPlaystation size={"100%"} /></div>}
+            {(props.id % 5 === 0) && <div className="w-5 h-5 sm:w-6 sm:h-6"><IoLogoXbox size={"100%"} /></div>}
+            {(props.id % 7 === 0) && <div className="w-5 h-5 sm:w-6 sm:h-6 mb-0.5"><BsApple size={"100%"} /></div>}
+            {(props.id % 11 === 0) && <div className="w-5 h-5 sm:w-6 sm:h-6"><DiAndroid size={"100%"} /></div>}
+            {(props.id % 13 === 0) && <div className="w-5 h-5 sm:w-6 sm:h-6"><FaLinux size={"100%"} /></div>}
           </div>
 
           <div><span className={`border ${props.point > 60 ? props.point > 75 ? "bg-green-500/20 text-green-500" : "bg-yellow-500/20 text-yellow-500"  : "bg-rose-500/20 text-rose-500"} px-2 rounded-md`}>{props.point}</span></div>
         </div>
+
+        {/* game title */}
+        <p className="text-xl xl:text-2xl font-semibold w-full line-clamp-1 m-0">{props.title}</p>
 
         {/* game description */}
         <p className="text-lg w-full line-clamp-3 m-0">{props.short_description}</p>

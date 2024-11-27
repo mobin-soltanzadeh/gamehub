@@ -19,10 +19,10 @@ function GameHub() {
   searchedWord ? filteredGames = searchByWord(games, searchedWord) : filteredGames = searchByGenre(games, genre);
   
   return (
-    <div className="App flex flex-col gap-y-5 xl:gap-y-10 p-4 xl:p-5 min-h-screen min-w-full text-zinc-800 dark:text-gray-100 bg-gray-100 dark:bg-black/90 transition-colors duration-1000">
+    <div className="App flex flex-col gap-y-0 xl:gap-y-10 min-h-screen min-w-full lg:p-2 text-zinc-800 dark:text-gray-100 bg-gray-100 dark:bg-black/90 transition-colors duration-1000">
       <Navbar onSearch={setSearchedWord} onChangeGenre={setGenre} />
 
-      <div className="flex justify-start items-start gap-x-1 lg:gap-x-3 xl:gap-x-4 gap-10">
+      <div className="flex justify-start items-start gap-x-1 lg:gap-x-3 xl:gap-x-4 gap-10 p-2 xl:p-3">
         <Sidebar mainGenre={genre} onChangeGenre={setGenre}/>
         <Main genre={genre} filteredGames={filteredGames} />
       </div>

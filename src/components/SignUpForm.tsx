@@ -46,7 +46,7 @@ export default function SignUpForm() {
       
       <div className="flex flex-col justify-center items-center gap-y-1 w-full px-14">
         <button>forget your password?</button>
-        <button className="w-full py-2 bg-gradient-to-tl from-indigo-700 to-blue-400/80 text-white rounded-xl">
+        <button className="w-full py-2 bg-gradient-to-tl from-indigo-700 to-blue-400/80 text-white rounded-xl hover:bg-black hover:text-gray-200 transition-colors duration-300">
           SIGN UP
         </button>
       </div>
