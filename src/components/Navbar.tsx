@@ -30,7 +30,7 @@ function Navbar({ onSearch, onChangeGenre }: Props) {
   }
 
   return (
-    <div className="Navbar flex justify-center items-center gap-x-1 sm400:gap-x-2 lg:gap-x-4 p-2">
+    <div className="Navbar flex justify-center items-center gap-x-0.5 sm400:gap-x-1 lg:gap-x-2 p-2">
       {/* Logo */}
       <img src={Logo} alt="game hub logo" className="w-12 h-12 sm:w-16 sm:h-16" />
 
@@ -41,13 +41,13 @@ function Navbar({ onSearch, onChangeGenre }: Props) {
       </div>
 
       {/* login btn */}
-      <Link to={"/gamehub/login"} className="max-w-8 max-h-8 sm400:max-w-9 sm400:max-h-9 sm:max-w-11 sm:max-h-11 lg:max-w-12 lg:max-h-12 text-zinc-800 dark:text-gray-100 hover:text-orange-500 dark:hover:text-orange-500"><IoLogInOutline size={"100%"} /></Link>
+      <Link to={"/gamehub/login"} className="max-w-7 max-h-7 sm400:max-w-8 sm400:max-h-8 sm:max-w-9 sm:max-h-9 xl:max-w-10 xl:max-h-10 text-zinc-800 dark:text-gray-100 hover:text-orange-500 dark:hover:text-orange-500"><IoLogInOutline size={"100%"} /></Link>
 
       {/* theme btn */}
       <div className="mt-2 hover:text-orange-500 dark:hover:text-orange-500"><SwitchThemeBtn /></div>
       
       {/* menu btn */}
-      <div className={`relative sm:hidden min-w-8 min-h-8 sm400:min-w-9 sm400:min-h-9 hover:text-orange-500 dark:hover:text-orange-500 rotate-0 hover:rotate-[900deg] transition-transform duration-[2000ms]`} onClick={() => setDisplayMenu(true)} ><IoIosMenu className="absolute top-0 left-0"  size={"100%"} /></div>
+      <div className={`relative sm:hidden mt-0.5 min-w-7 min-h-7 sm400:min-w-8 sm400:min-h-8 hover:text-orange-500 dark:hover:text-orange-500 rotate-0 hover:rotate-[900deg] transition-transform duration-[2000ms]`} onClick={() => setDisplayMenu(true)} ><IoIosMenu className="absolute top-0 left-0"  size={"100%"} /></div>
 
  
       <div className={`backGroundBlurModal sm:hidden ${displayMenu ? "" : "hidden"} fixed top-0 left-0 w-screen h-screen bg-black/30 backdrop-blur-[2px] z-40`}  onClick={() => setDisplayMenu(false)}></div>
@@ -58,7 +58,7 @@ function Navbar({ onSearch, onChangeGenre }: Props) {
         <ul className="flex flex-col gap-y-2 w-full px-8 pt-6">
           <div className="flex justify-between items-center">
             <h1 className="text-lg font-bold m-0">Genres</h1>
-            <IoIosClose size={"50px"} className="-rotate-180 hover:rotate-180 p-1 transition-transform duration-1000" onClick={() => setDisplayMenu(false)} />
+            <IoIosClose size={"45px"} className="-rotate-180 hover:rotate-180 p-1 transition-transform duration-1000" onClick={() => setDisplayMenu(false)} />
           </div>
         
           {genres.map((genre, index) => (
@@ -68,19 +68,18 @@ function Navbar({ onSearch, onChangeGenre }: Props) {
             </li>
           ))}
 
-          <div className="flex justify-between items-center w-full mt-3">
-            <p className="m-0">Theme</p>
+          <div className="flex justify-between items-center w-full mt-2">
+            <p className="m-0 text-sm sm400:text-base font-semibold">Theme</p>
             <SwitchThemeBtn/>
           </div>
 
-          <div className="flex justify-between items-center w-full mt-3">
+          <div className="flex justify-between items-center w-full mt-2">
             <div className="flex flex-col m-0">
-              <p className="m-0">Sign in</p>
-              <p className="m-0">Sign up</p>
+              <p className="m-0 text-sm sm400:text-base font-semibold">Sign in</p>
+              <p className="m-0 text-sm sm400:text-base font-semibold">Sign up</p>
             </div>
 
-            <Link to={"/gamehub/login"} className="sm:hidden max-w-8 max-h-8 sm400:max-w-9 sm400:max-h-9 text-zinc-800 dark:text-gray-100 hover:text-orange-500 dark:hover:text-orange-500"><IoLogInOutline size={"100%"} /></Link>
-            {/* <div className="sm:hidden max-w-8 max-h-8 sm400:max-w-9 sm400:max-h-9 hover:text-orange-500 dark:hover:text-orange-500"><IoLogInOutline size={"100%"} /></div>           */}
+            <Link to={"/gamehub/login"} className="sm:hidden max-w-7 max-h-7 sm400:max-w-8 sm400:max-h-8 text-zinc-800 dark:text-gray-100 hover:text-orange-500 dark:hover:text-orange-500"><IoLogInOutline size={"100%"} /></Link>
           </div>
           
         </ul>

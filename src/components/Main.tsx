@@ -66,7 +66,7 @@ function Main({ genre, filteredGames }: Props) {
     <div className="Main flex flex-col grow justify-center items-start gap-y-3 lg:gap-y-5 xl:gap-y-8 w-full px-2">
       <p className="mainHeader text-2xl lg:text-3xl xl:text-5xl font-bold">{platform} {genre} Games</p>
       
-      <div className="flex flex-col lg:flex-row gap-x-3 gap-y-2">
+      <div className="flex flex-col sm400:flex-row gap-x-3 gap-y-2">
   
         <div className="relative rounded-lg" onFocus={() => setPlatformModal(true)} onBlur={() => setTimeout(() => setPlatformModal(false), 200)}>
           <button className="flex justify-center items-center gap-x-0 lg:gap-x-8 px-2 bg-gray-300 dark:bg-zinc-700 rounded-md focus:ring-4 ring-blue-400/20">

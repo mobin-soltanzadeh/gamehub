@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Social from "./Social";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 interface DataForm {
   email: string;
@@ -9,11 +10,15 @@ interface DataForm {
 }
 
 export default function SignInForm() {
+  const navigate = useNavigate()
   const { register, handleSubmit, reset, formState: { errors } } = useForm<DataForm>();
   const [passwordUnlock, setUnlock] = useState(true)
 
   return (
-    <form className="flex flex-col justify-center items-center gap-y-6 w-full px-14 font-semibold" onSubmit={handleSubmit(() => reset())}>
+    <form className="flex flex-col justify-center items-center gap-y-6 w-full px-14 font-semibold" onSubmit={handleSubmit(() => {
+      reset();
+      navigate("/gamehub/")
+    })}>
       <div className="flex flex-col justify-center items-center gap-y-2">
         <h1>Sign In</h1>
         <Social />
